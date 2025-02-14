@@ -8,10 +8,10 @@ import { createTheme } from "@mui/material/styles"
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1976d2", // Material UI blue
+      main: "#1976d2", 
     },
     secondary: {
-      main: "#f50057", // Material UI pink
+      main: "#f50057", 
     },
   },
 })

@@ -1,14 +1,8 @@
+import { OrderInterface } from "@/app/interfaces/order-list"
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from "@mui/material"
 import Link from "next/link"
 
-// This would typically come from an API
-const orders = [
-  { id: 1, customer: "John Doe", total: 99.99, status: "Completed" },
-  { id: 2, customer: "Jane Smith", total: 149.99, status: "Processing" },
-  { id: 3, customer: "Bob Johnson", total: 79.99, status: "Shipped" },
-]
-
-export default function OrderList() {
+export default function OrderList({ orders }: { orders: OrderInterface[] }) {
   return (
     <div>
       <h1>Orders</h1>
@@ -28,15 +22,14 @@ export default function OrderList() {
           </TableHead>
           <TableBody>
             {orders.map((order) => (
-              <TableRow key={order.id}>
-                <TableCell>{order.id}</TableCell>
-                <TableCell>{order.customer}</TableCell>
+              <TableRow key={order._id}>
+                <TableCell>{order._id}</TableCell>
                 <TableCell>${order.total.toFixed(2)}</TableCell>
-                <TableCell>{order.status}</TableCell>
+                <TableCell>{order.products.map((product) => product.name).join(", ")}</TableCell>
                 <TableCell>
                   <Button
                     component={Link}
-                    href={`/orders/${order.id}/edit`}
+                    href={`/orders/${order._id}/edit`}
                     variant="outlined"
                     size="small"
                     style={{ marginRight: "10px" }}

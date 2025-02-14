@@ -1,7 +1,7 @@
 import { Grid, Paper, Typography } from "@mui/material"
 
 export default function Dashboard() {
-  // In a real application, you would fetch this data from your API
+  
   const kpis = [
     { title: "Total Orders", value: "1,234" },
     { title: "Average Order Value", value: "$89.99" },

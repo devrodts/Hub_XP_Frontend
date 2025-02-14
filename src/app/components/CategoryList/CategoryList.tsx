@@ -1,14 +1,10 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from "@mui/material"
 import Link from "next/link"
 
-// This would typically come from an API
-const categories = [
-  { id: 1, name: "Category 1" },
-  { id: 2, name: "Category 2" },
-  { id: 3, name: "Category 3" },
-]
 
-export default function CategoryList() {
+
+
+export default function CategoryList({ categories }: { categories: any[] }) {
   return (
     <div>
       <h1>Categories</h1>
@@ -36,7 +32,7 @@ export default function CategoryList() {
                 <TableCell>
                   <Button
                     component={Link}
-                    href={`/categories/${category.id}/edit`}
+                    href={`/categories/${category.id}`}
                     variant="outlined"
                     size="small"
                     style={{ marginRight: "10px" }}
