@@ -1,4 +1,4 @@
-import { OrderInterface } from "@/app/interfaces/order-list"
+import { OrderInterface } from "@/app/interfaces/order"
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from "@mui/material"
 import Link from "next/link"
 

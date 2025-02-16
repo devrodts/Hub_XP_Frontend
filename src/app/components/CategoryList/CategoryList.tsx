@@ -1,10 +1,7 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from "@mui/material"
 import Link from "next/link"
-
-
-
-
-export default function CategoryList({ categories }: { categories: any[] }) {
+import { CategoryInterface } from "@/app/interfaces/category"
+export default function CategoryList({ categories }: { categories: CategoryInterface[] }) {
   return (
     <div>
       <h1>Categories</h1>
@@ -27,12 +24,12 @@ export default function CategoryList({ categories }: { categories: any[] }) {
           </TableHead>
           <TableBody>
             {categories.map((category) => (
-              <TableRow key={category.id}>
+              <TableRow key={category._id}>
                 <TableCell>{category.name}</TableCell>
                 <TableCell>
                   <Button
                     component={Link}
-                    href={`/categories/${category.id}`}
+                    href={`/categories/${category._id}`}
                     variant="outlined"
                     size="small"
                     style={{ marginRight: "10px" }}
